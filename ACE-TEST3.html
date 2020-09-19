@@ -1,0 +1,286 @@
+<html>
+<head>
+
+</head>
+<body>
+</body>
+<script>
+var blocks = [
+{address: 0x39,
+ body: "98 20 B9 F9 A5 6E 48 98 20 B9 F9 A9 01 20 B9 F9 68 91 6E 4C 39 00"},
+{address: 0x36, 
+ body: "AC 39"}
+]
+
+curLine = "";
+
+for (var h=0; h<blocks.length;h++){
+    
+	var start = blocks[h].address
+	var string = blocks[h].body
+	
+	var res = string.split(" ")
+	
+	for (var i=0;i<res.length;i = i + 2){
+		var curLine = curLine + "|    0,..|";
+		var curNum = parseInt("0x"+res[i]) + 256*parseInt("0x"+res[i+1]);
+		
+		if (start & 0x0010){
+			curLine = curLine + "U";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x0020){
+			curLine = curLine + "D";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x0040){
+			curLine = curLine + "L";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x0080){
+			curLine = curLine + "R";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x0008){
+			curLine = curLine + "S";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x0004){
+			curLine = curLine + "s";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x0002){
+			curLine = curLine + "B";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x0001){
+			curLine = curLine + "A";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		curLine+="|........|"
+		
+		curLine+="\n"
+		
+		curLine+="|    0,..|........|"
+		
+		if (start & 0x1000){
+			curLine = curLine + "U";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x2000){
+			curLine = curLine + "D";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x4000){
+			curLine = curLine + "L";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x8000){
+			curLine = curLine + "R";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x0800){
+			curLine = curLine + "S";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x0400){
+			curLine = curLine + "s";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x0200){
+			curLine = curLine + "B";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (start & 0x0100){
+			curLine = curLine + "A";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		curLine = curLine + "|"
+		curLine = curLine + "\n"
+		curLine = curLine + "|    0,..|........|........|"
+		curLine = curLine + "\n"
+
+		var curLine = curLine + "|    0,..|";
+		var curnum = parseInt("0x"+res[i]);
+		
+		if (curNum & 0x0010){
+			curLine = curLine + "U";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x0020){
+			curLine = curLine + "D";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x0040){
+			curLine = curLine + "L";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x0080){
+			curLine = curLine + "R";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x0008){
+			curLine = curLine + "S";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x0004){
+			curLine = curLine + "s";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x0002){
+			curLine = curLine + "B";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x0001){
+			curLine = curLine + "A";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		curLine+="|........|"
+		
+		curLine+="\n"
+		
+		curLine+="|    0,..|........|"
+		
+		if (curNum & 0x1000){
+			curLine = curLine + "U";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x2000){
+			curLine = curLine + "D";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x4000){
+			curLine = curLine + "L";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x8000){
+			curLine = curLine + "R";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x0800){
+			curLine = curLine + "S";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x0400){
+			curLine = curLine + "s";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x0200){
+			curLine = curLine + "B";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		if (curNum & 0x0100){
+			curLine = curLine + "A";
+		}
+		else{
+			curLine = curLine + ".";
+		}
+		
+		curLine = curLine + "|"
+		curLine = curLine + "\n"
+		curLine = curLine + "|    0,..|........|........|"
+		curLine = curLine + "\n"
+		
+		start = start + 2;
+	}
+}
+
+var body = document.getElementsByTagName('body');
+body.innerHTML = curLine;
+
+console.log(curLine);
+</script>
+</html>
